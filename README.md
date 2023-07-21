@@ -1,4 +1,4 @@
-# Work Clock
+# DreamBerd Work Clock
 
 A simple clock with a 30-minute timer I made for my work.
 
