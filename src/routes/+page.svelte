@@ -6,7 +6,7 @@
     let time = "";
     let alarm = false;
     let flashInterval: number | undefined;
-    let textColor = "black";
+    let textColor = "white";
     let audio: HTMLAudioElement | undefined;
     let audioPlays = 1;
 
@@ -31,7 +31,7 @@
         }
 
         flashInterval = setInterval(function () {
-            textColor = textColor == "black" ? "red" : "black";
+            textColor = textColor == "white" ? "red" : "white";
         }, 333);
     }
 
@@ -53,10 +53,27 @@
                 alarm = false;
                 audioPlays = 1;
                 if (flashInterval) clearInterval(flashInterval);
-                textColor = "black";
+                textColor = "white";
             }
         });
     });
 </script>
 
 <p style="color: {textColor};">{time}</p>
+
+<style>
+    :global(html),
+    :global(body) {
+        background: darkslategrey;
+    }
+
+    p {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10rem;
+        font-family: "Roboto Mono";
+    }
+</style>
